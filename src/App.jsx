@@ -25,8 +25,8 @@ function reducer(state, action) {
   }
 }
 
-export const contactStateContext = createContext();
-export const contactDispatchContext = createContext();
+export const ContactStateContext = createContext();
+export const ContactDispatchContext = createContext();
 
 function App() {
   const [contacts, dispatch] = useReducer(reducer, mockData);
@@ -57,16 +57,16 @@ function App() {
   return (
     <div className="App">
       <h2>Contact List</h2>
-      <contactStateContext.Provider value={contacts}>
-        <contactDispatchContext.Provider value={memoizedDispatches}>
+      <ContactStateContext.Provider value={contacts}>
+        <ContactDispatchContext.Provider value={memoizedDispatches}>
           <section>
             <ContactEditor />
           </section>
           <section>
             <ContactList />
           </section>
-        </contactDispatchContext.Provider>
-      </contactStateContext.Provider>
+        </ContactDispatchContext.Provider>
+      </ContactStateContext.Provider>
     </div>
   );
 }

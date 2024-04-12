@@ -1,11 +1,11 @@
 import "./ContactList.css";
 import ContactItem from "./ContactItem";
 import { useContext } from "react";
-import { contactStateContext, contactDispatchContext } from "../App";
+import { ContactStateContext, ContactDispatchContext } from "../App";
 
 export default function ContactList() {
-  const contacts = useContext(contactStateContext);
-  const { onDelete } = useContext(contactDispatchContext);
+  const contacts = useContext(ContactStateContext);
+  const { onDelete } = useContext(ContactDispatchContext);
 
   const getFilterdData = () => {
     return contacts.filter((contact) => contact.content);
